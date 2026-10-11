@@ -1,4 +1,4 @@
-const menuBtn=document.querySelector('.menu-btn');const nav=document.querySelector('.nav-links');if(menuBtn&&nav){menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));}
+const menuBtn=document.querySelector('.menu-btn');const nav=document.querySelector('.nav-links');if(menuBtn&&nav){menuBtn.addEventListener('click',()=>{nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',nav.classList.contains('open'));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));}
 
 const productData={
   hydra:{name:'Hydra Glow Foundation',price:'CAD $42',why:'a soft luminous finish with medium, buildable coverage; especially suited to normal-to-dry skin.'},
